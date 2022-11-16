@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  url:string = 'http://18.234.133.209:8080/auth/login';
+  url:string = 'http://44.206.252.37:9999/auth/login';
   username = new FormControl('');
   password = new FormControl('');
   role:any = "";
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       next: (response) =>
       {
         this.role = response.headers.get("Authorization");
-        console.log(this.role);
+        console.log(response);
         if(this.role == 'ROLE_STUDENT'){
           this.router.navigate(['/profile']);
         }else if(this.role == 'ROLE_MENTOR'){
