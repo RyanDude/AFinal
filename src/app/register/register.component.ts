@@ -23,9 +23,9 @@ export class RegisterComponent implements OnInit {
       'password':this.password.value,
     };
 
-    if(this.user_role == 'STUDENT'){this.url = 'http://44.206.252.37:9999/studentreg';}
-    else if(this.user_role == 'MENTOR'){this.url = 'http://44.206.252.37:9999/mentorreg';}
-    else if(this.user_role == 'ADMIN'){this.url = 'http://44.206.252.37:9999/adminreg';}
+    if(this.user_role == 'STUDENT'){this.url = 'http://localhost:9999/studentreg';}
+    else if(this.user_role == 'MENTOR'){this.url = 'http://localhost:9999/mentorreg';}
+    else if(this.user_role == 'ADMIN'){this.url = 'http://localhost:9999/adminreg';}
 
     this.http.post<any>(this.url, JSON.stringify(body), {'headers':headers}).subscribe(response=>{
       console.log(response.statusCode);

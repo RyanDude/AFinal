@@ -13,7 +13,7 @@ export class ErrorComponent implements OnInit {
     this.test();
   }
   test(){
-    this.http.get('http://44.206.252.37:9999/hi',{ observe: 'response', withCredentials: true})
+    this.http.get('http://localhost:9999/hi',{ observe: 'response', withCredentials: true})
       .subscribe(data=>{console.log(data);alert("it works!")});
   }
 }

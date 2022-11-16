@@ -28,7 +28,7 @@ export class MentorProfileComponent implements OnInit {
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>("http://44.206.252.37:9999/mentor/profile", {observe: 'response', withCredentials: true}).subscribe(
+    this.http.get<any>("http://localhost:9999/mentor/profile", {observe: 'response', withCredentials: true}).subscribe(
       {
         next:(response)=>{
           console.log(response);
@@ -54,7 +54,7 @@ export class MentorProfileComponent implements OnInit {
       "title": this.title,
       "race": this.race,
     };
-    this.http.post("http://18.234.133.209:9999/mentor/update", body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe({
+    this.http.post("http://localhost:9999/mentor/update", body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe({
       next:(response)=>{
         console.log(response);
       },

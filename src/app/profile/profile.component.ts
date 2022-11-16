@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  url:string = 'http://44.206.252.37:9999/student/info';
+  url:string = 'http://localhost:9999/student/info';
   email = new FormControl;
   selectedGender?:string;
   likedGender:string[] = ['Male', 'Female','Both'];
@@ -57,7 +57,7 @@ export class ProfileComponent implements OnInit {
       'likedPos':this.likedPos
     };
     console.log(body);
-    this.http.post('http://44.206.252.37:9999/student/update', body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe(
+    this.http.post('http://localhost:9999/student/update', body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe(
       {
         next:(response)=>{console.log(response)},
         error:(e)=>{}
