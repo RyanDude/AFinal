@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  url:string = 'http://localhost:9999/auth/login';
+  url:string = 'http://172.31.80.119:9999/auth/login';
   username = new FormControl('');
   password = new FormControl('');
   role:any = "";
