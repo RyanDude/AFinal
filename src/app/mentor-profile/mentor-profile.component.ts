@@ -54,7 +54,7 @@ export class MentorProfileComponent implements OnInit {
       "title": this.title,
       "race": this.race,
     };
-    this.http.post("http://172.31.80.119:9999/mentor/update", body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe({
+    this.http.post("http://44.206.252.37:9999/mentor/update", body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe({
       next:(response)=>{
         console.log(response);
       },
