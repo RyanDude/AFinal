@@ -14,6 +14,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
 import { MentorComponent } from './mentor/mentor.component';
 import { StudentComponent } from './student/student.component';
+import { AdminComponent } from './admin/admin.component';
+import { AStudentComponent } from './astudent/astudent.component';
+import { AMentorComponent } from './amentor/amentor.component';
+import { ASearchComponent } from './asearch/asearch.component';
+import { StudentSearchComponent } from './student-search/student-search.component';
+import { YourStudentsComponent } from './your-students/your-students.component';
+import { MsearchComponent } from './msearch/msearch.component';
+import { MfileComponent } from './mfile/mfile.component';
+import { SfileComponent } from './sfile/sfile.component';
 
 
 @NgModule({
@@ -25,7 +34,16 @@ import { StudentComponent } from './student/student.component';
     ProfileComponent,
     MentorProfileComponent,
     MentorComponent,
-    StudentComponent
+    StudentComponent,
+    AdminComponent,
+    AStudentComponent,
+    AMentorComponent,
+    ASearchComponent,
+    StudentSearchComponent,
+    YourStudentsComponent,
+    MsearchComponent,
+    MfileComponent,
+    SfileComponent
   ],
   imports: [
     BrowserModule,

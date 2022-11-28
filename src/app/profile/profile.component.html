@@ -1,17 +1,29 @@
 <div class="topnav">
   <a routerLink="/student">Student Home</a>
   <a routerLink="/profile" class="active">Info</a>
+  <a routerLink="/ssearch">Search Mentor</a>
+  <a routerLink="/sfile">File</a>
 </div>
+
 
 <form id="msform" (ngSubmit)="update()" >
   <fieldset>
-    <h1 class="fs-title">Your Info, you can update by click update button</h1>
+    <h1 class="fs-title">Your Info</h1>
     <h2 class="fs-subtitle">Your Name</h2>
   <input type="text" name="username" required [formControl]="name" >
     <h2 class="fs-subtitle">Email</h2>
   <input type="text" name="email" required [formControl]="email" >
-    <h2 class="fs-subtitle">Gender</h2><br/><br/><br/>
 
+    <h2 class="fs-subtitle">your major</h2>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="field"  [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let l of fields">
+          {{l}}
+        </option>
+      </select>
+    </li>
+
+    <h2 class="fs-subtitle">&nbsp;&nbsp;&nbsp;&nbsp;your gender</h2>
     <li>
       <select class="fs-subtitle" [(ngModel)]="selectedGender"  [ngModelOptions]="{standalone: true}">
         <option *ngFor="let l of genders">

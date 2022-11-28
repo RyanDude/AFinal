@@ -1,0 +1,40 @@
+<div class="topnav">
+  <a routerLink="/student">Student Home</a>
+  <a routerLink="/profile">Info</a>
+  <a routerLink="/ssearch" class="active">Search Mentor</a>
+  <a routerLink="/sfile">File</a>
+</div>
+<div class="wrap">
+  <div class="search">
+    <input type="text" class="searchTerm" placeholder="Pls input mentor's name" [(ngModel)]="input">
+    <button type="button" (click)="search()"  class="searchButton">
+      search
+    </button>
+  </div>
+</div>
+
+<table *ngIf="show">
+  <thead>
+  <tr>
+    <th>Student Id</th>
+    <th>Student Name</th>
+    <th>field</th>
+    <th>email</th>
+    <th>gender</th>
+    <th>want to be his/her student?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of mentors">
+    <td>{{item.id}}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.field }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.gender }}</td>
+    <td><button type="button" (click)="send(item.id)">send request</button></td>
+  </tr>
+  <button type="button" (click)="previous()" style="background: url('/assets/images/rarrow.png'); min-width: 14px; min-height: 15px; border: seashell;"></button>
+  {{showmen}}/{{totalNum}}
+  <button type="button" (click)="next()" style="background: url('/assets/images/left-arrow.png'); min-width: 18px; min-height: 16px; border: seashell"></button>
+  </tbody>
+</table>

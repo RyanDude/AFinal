@@ -1,4 +1,34 @@
 <div class="topnav">
   <a routerLink="/mentor" class="active">Mentor Home</a>
   <a routerLink="/mentor_profile">Mentor Info</a>
+  <a routerLink="/yourstudents">Your Students</a>
+  <a routerLink="/mfile">File</a>
 </div>
+
+<table>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Field</th>
+    <th>Accept OR Not</th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+  <tr *ngFor="let item of ItemsArray">
+    <td>{{item.id}}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.field }}</td>
+    <td>
+      <button type="button" (click)="refuse(item.id)">refuse</button>
+      <button type="button" (click)="accept(item.id)">accept</button>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>

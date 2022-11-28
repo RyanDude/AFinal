@@ -25,10 +25,12 @@ export class MentorProfileComponent implements OnInit {
   gender?:string;
   title?:string;
   race?:string;
+  field?:string;
+  fields:string[] = ["computer science", "music", "architecture", "business", "humanity", "accounting"];
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>("http://172.31.80.119:9999/mentor/profile", {observe: 'response', withCredentials: true}).subscribe(
+    this.http.get<any>("http://44.206.252.37:9999/mentor/profile", {observe: 'response', withCredentials: true}).subscribe(
       {
         next:(response)=>{
           console.log(response);
@@ -38,6 +40,7 @@ export class MentorProfileComponent implements OnInit {
           this.gender = response.body.inner.gender;
           this.title = response.body.inner.title;
           this.race = response.body.inner.race;
+          this.field = response.body.inner.field;
         },
         error:(e)=>{alert(e);}
       }
@@ -53,6 +56,7 @@ export class MentorProfileComponent implements OnInit {
       "gender": this.gender,
       "title": this.title,
       "race": this.race,
+      "field": this.field
     };
     this.http.post("http://44.206.252.37:9999/mentor/update", body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe({
       next:(response)=>{

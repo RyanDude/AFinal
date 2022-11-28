@@ -1,0 +1,32 @@
+<div class="topnav">
+  <a routerLink="/mentor" >Mentor Home</a>
+  <a routerLink="/mentor_profile">Mentor Info</a>
+  <a routerLink="/yourstudents">Your Students</a>
+  <a routerLink="/mfile" class="active">File</a>
+</div>
+<table *ngIf="show">
+  <thead>
+  <tr>
+    <th>File Id</th>
+    <th>File Name</th>
+    <th>Download</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td><a href="http://44.206.252.37:9999/mentor/files/{{item.name}}" target="_blank">DownLoad</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <input class="form-control" type="file"
+         (change)="onChange($event)">
+
+  <button (click)="upload()"
+          class="btn btn-success">
+    Upload
+  </button>
+</div>

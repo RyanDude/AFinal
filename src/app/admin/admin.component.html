@@ -1,0 +1,41 @@
+<div class="topnav">
+  <a routerLink="/admin" class="active">Admin</a>
+  <a routerLink="/astudent">Students Info</a>
+  <a routerLink="/amentor">Mentors Info</a>
+  <a routerLink="/asearch">Search</a>
+</div>
+<h2 class="hs">mentor-student matched requests</h2>
+<br/>
+<table>
+  <thead>
+  <tr>
+    <th>Student Id</th>
+    <th>Student Name</th>
+    <th>Mentor Id</th>
+    <th>Mentor Name</th>
+    <th>Agree OR Not</th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+  <tr *ngFor="let item of ItemsArray">
+    <td>{{item[0]}}</td>
+    <td>{{ item[1] }}</td>
+    <td>{{ item[2] }}</td>
+    <td>{{ item[3] }}</td>
+    <td>
+      <button type="button" (click)="refuse(item[0],item[2])">refuse</button>
+      <button type="button" (click)="agree(item[0], item[2])">accept</button>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+<div class="border full">
+  <h2>statistics</h2>
+  total number of mentors = {{mnum}}<br/>
+  total number of students = {{snum}}
+</div>

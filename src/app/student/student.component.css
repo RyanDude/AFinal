@@ -2,7 +2,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 #msform {
-  text-align: center;
+  text-align: left;
   position: relative;
   margin-top: 30px;
 }
@@ -27,7 +27,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 /*inputs*/
-#msform input, #msform textarea {
+#msform input, #msform textarea, #msform div {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 0px;
@@ -153,6 +153,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  width: 300px;
 }
 
 .topnav a:hover {

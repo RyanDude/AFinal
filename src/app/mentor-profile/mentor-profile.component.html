@@ -1,6 +1,8 @@
 <div class="topnav">
   <a routerLink="/mentor">Mentor Home</a>
   <a routerLink="/mentor_profile" class="active">Mentor Info</a>
+  <a routerLink="/yourstudents">Your Students</a>
+  <a routerLink="/mfile">File</a>
 </div>
 
 <form id="msform" (ngSubmit)="update()" >
@@ -13,7 +15,14 @@
     <h2 class="fs-subtitle">Current Employer</h2>
     <input type="text" name="current_employer" required [formControl]="current_employer" >
 
-    <h2 class="fs-subtitle">Your Gender</h2><br/><br/><br/>
+    <h2 class="fs-subtitle">Your field</h2>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="field" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let g of fields">{{g}}</option>
+      </select>
+    </li>
+
+    <h2 class="fs-subtitle">&nbsp;&nbsp;&nbsp;&nbsp;Your Gender</h2>
     <li>
       <select class="fs-subtitle" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let g of genders">{{g}}</option>

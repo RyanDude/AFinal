@@ -21,6 +21,9 @@ export class ProfileComponent implements OnInit {
   name = new FormControl('');
   pid = new FormControl('');
   genders:string[] = ['Male', 'Female'];
+
+  field?:string;
+  fields:string[] = ["computer science", "music", "architecture", "business", "humanity", "accounting"];
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
@@ -38,6 +41,7 @@ export class ProfileComponent implements OnInit {
           this.likedPos = response.body.likedPos;
           this.selectedLikedGender = response.body.likedGender;
           this.selectedGender = response.body.gender;
+          this.field = response.body.field;
         },
         error:(e)=>{
           alert(e);
@@ -54,7 +58,8 @@ export class ProfileComponent implements OnInit {
       'name':this.name.value,
       'gender':this.selectedGender,
       'likedGender': this.selectedLikedGender,
-      'likedPos':this.likedPos
+      'likedPos':this.likedPos,
+      'field':this.field
     };
     console.log(body);
     this.http.post('http://44.206.252.37:9999/student/update', body, {'headers':headers,observe: 'response', withCredentials: true}).subscribe(

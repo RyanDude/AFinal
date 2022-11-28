@@ -1,83 +1,24 @@
-
 body {font-family: Arial, Helvetica, sans-serif;}
 
-#msform {
-  text-align: center;
-  position: relative;
-  margin-top: 30px;
+table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 25%;
+  left: 20px;
 }
 
-#msform fieldset {
-  background: white;
-  border: 0 none;
-  border-radius: 0px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-  padding: 20px 30px;
-  box-sizing: border-box;
-  width: 80%;
-  margin: 0 10%;
-
-  /*stacking fieldsets above each other*/
-  position: relative;
+thead tr {
+  background-color: #009879;
+  color: #ffffff;
 }
 
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
-  display: none;
-}
-
-/*inputs*/
-#msform input, #msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
-}
-
-#msform input:focus, #msform textarea:focus {
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  border: 1px solid #ee0979;
-  outline-width: 0;
-  transition: All 0.5s ease-in;
-  -webkit-transition: All 0.5s ease-in;
-  -moz-transition: All 0.5s ease-in;
-  -o-transition: All 0.5s ease-in;
-}
-
-/*headings*/
-.fs-title {
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #2C3E50;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
-.fs-subtitle {
-  font-weight: normal;
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 20px;
-  float: left;
-}
-
-/**************************************/
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+td {
+  padding: 30px 45px;
 }
 
 .submit {
@@ -190,4 +131,74 @@ li{
   border-color: #04AA6D;
   color: green;
 }
+
+.border {
+  right: 0;
+  position: absolute;
+  display: inline;
+  font-size: 1.6rem;
+  place-items: center;
+  min-height: 50px;
+  min-width: 300px;
+  border: 8px solid;
+  padding: 1rem;
+  color: #2C3E50;
+
+}
+.full {
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+}
+
+.hs{
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 0px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-left: 15%;
+}
+/* search bar */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 70px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 50%;
+  position: absolute;
+  top: 150px;
+  left: 500px;
+  transform: translate(-50%, -50%);
+}
+
 

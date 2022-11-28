@@ -1,0 +1,72 @@
+<div class="topnav">
+  <a routerLink="/admin">Admin</a>
+  <a routerLink="/astudent">Students Info</a>
+  <a routerLink="/amentor">Mentors Info</a>
+  <a routerLink="/asearch" class="active">Search</a>
+</div>
+<br/>
+<div class="wrap">
+  <div class="search">
+    <input type="text" class="searchTerm" placeholder="What are you looking for?" [(ngModel)]="input">
+    <button type="button" (click)="search()"  class="searchButton">
+      search
+    </button>
+  </div>
+  search options: mentors/students
+  <select class="fs-subtitle" [(ngModel)]="option"  [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let l of options">
+      {{l}}
+    </option>
+  </select>
+</div>
+<table *ngIf="shide">
+  <thead>
+  <tr>
+    <th>Student Id</th>
+    <th>Student Name</th>
+    <th>field</th>
+    <th>email</th>
+    <th>gender</th>
+    <th>has mentor</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of students">
+    <td>{{item.id}}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.field }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.gender }}</td>
+    <td>{{ item.mentor != null}}</td>
+  </tr>
+  <button type="button" (click)="sprevious()" style="background: url('/assets/images/rarrow.png'); min-width: 14px; min-height: 15px; border: seashell;"></button>
+  {{showst}}/{{stotalNum}}
+  <button type="button" (click)="snext()" style="background: url('/assets/images/left-arrow.png'); min-width: 18px; min-height: 16px; border: seashell"></button>
+  </tbody>
+</table>
+
+<table *ngIf="mhide">
+  <thead>
+  <tr>
+    <th>Mentor Id</th>
+    <th>Mentor Name</th>
+    <th>field</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Students</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of mentors">
+    <td>{{item.id}}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.field }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.gender }}</td>
+    <td>{{ item.student}}</td>
+  </tr>
+  <button type="button" (click)="mprevious()" style="background: url('/assets/images/rarrow.png'); min-width: 14px; min-height: 15px; border: seashell;"></button>
+  {{showst}}/{{stotalNum}}
+  <button type="button" (click)="mnext()" style="background: url('/assets/images/left-arrow.png'); min-width: 18px; min-height: 16px; border: seashell"></button>
+  </tbody>
+</table>

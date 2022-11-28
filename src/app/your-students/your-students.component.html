@@ -1,0 +1,40 @@
+<div class="topnav">
+  <a routerLink="/mentor">Mentor Home</a>
+  <a routerLink="/mentor_profile">Mentor Info</a>
+  <a routerLink="/yourstudents" class="active">Your Students</a>
+  <a routerLink="/mfile">File</a>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Student Id</th>
+    <th>Student Name</th>
+    <th>field</th>
+    <th>email</th>
+    <th>gender</th>
+    <th>send file</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of students">
+    <td>{{item.id}}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.field }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.gender }}</td>
+    <td><div class="text-center">
+      <input class="form-control" type="file"
+             (change)="onChange($event)">
+
+      <button (click)="upload(item.aid)"
+              class="btn btn-success">
+        Send
+      </button>
+    </div></td>
+  </tr>
+  </tbody>
+</table>
+
+
+
