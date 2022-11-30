@@ -131,4 +131,12 @@ button:active {
   color: #27bcda;
 }
 
+p{
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #9DBFAF;
+  text-align: center;
+  font-weight: 100;
+}
+
 
