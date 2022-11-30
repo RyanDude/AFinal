@@ -23,6 +23,9 @@ import { YourStudentsComponent } from './your-students/your-students.component';
 import { MsearchComponent } from './msearch/msearch.component';
 import { MfileComponent } from './mfile/mfile.component';
 import { SfileComponent } from './sfile/sfile.component';
+import { ChecklistPageComponent } from './checklist-page/checklist-page.component';
+import { AboutComponent } from './about/about.component';
+import { DescriptionComponent } from './description/description.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { SfileComponent } from './sfile/sfile.component';
     YourStudentsComponent,
     MsearchComponent,
     MfileComponent,
-    SfileComponent
+    SfileComponent,
+    ChecklistPageComponent,
+    AboutComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,

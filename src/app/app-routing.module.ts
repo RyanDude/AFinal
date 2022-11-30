@@ -16,6 +16,9 @@ import {YourStudentsComponent} from './your-students/your-students.component';
 import {MsearchComponent} from './msearch/msearch.component';
 import {MfileComponent} from './mfile/mfile.component';
 import {SfileComponent} from './sfile/sfile.component';
+import {AboutComponent} from './about/about.component';
+import {ChecklistPageComponent} from './checklist-page/checklist-page.component';
+import {DescriptionComponent} from './description/description.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,6 +37,10 @@ const routes: Routes = [
   { path: 'msearch', component: MsearchComponent },
   { path: 'mfile', component: MfileComponent },
   { path: 'sfile', component: SfileComponent },
+
+  { path: 'about', component: AboutComponent },
+  { path: 'checklist', component: ChecklistPageComponent },
+  { path: 'description', component: DescriptionComponent },
 ];
 
 @NgModule({
